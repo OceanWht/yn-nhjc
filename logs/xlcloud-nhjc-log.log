@@ -1,0 +1,66 @@
+2020-05-12 09:53:02.911  INFO 15804 --- [main] c.x.rdgroup.nhjc.XlcloudNhjcApplication  : Starting XlcloudNhjcApplication on DESKTOP-N1LUTPC with PID 15804 (D:\WorkSpace\Code_NHJC\nhjc\xlcloud-nhjc\target\classes started by wht in D:\WorkSpace\zhny\user-service)
+2020-05-12 09:53:02.928  INFO 15804 --- [main] c.x.rdgroup.nhjc.XlcloudNhjcApplication  : No active profile set, falling back to default profiles: default
+2020-05-12 09:53:11.603  INFO 15804 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8910 (http)
+2020-05-12 09:53:11.729  INFO 15804 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-12 09:53:11.729  INFO 15804 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.24]
+2020-05-12 09:53:11.753  INFO 15804 --- [main] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.21] of the APR based Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-05-12 09:53:11.753  INFO 15804 --- [main] o.a.catalina.core.AprLifecycleListener   : Loaded APR based Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-05-12 09:53:11.753  INFO 15804 --- [main] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-05-12 09:53:11.754  INFO 15804 --- [main] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-05-12 09:53:11.815  INFO 15804 --- [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-05-12 09:53:11.983  INFO 15804 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-12 09:53:11.983  INFO 15804 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 8733 ms
+2020-05-12 09:53:13.677  INFO 15804 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-12 09:53:14.081  INFO 15804 --- [main] s.a.ScheduledAnnotationBeanPostProcessor : No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2020-05-12 09:53:14.116 ERROR 15804 --- [main] org.apache.catalina.util.LifecycleBase   : Failed to start component [Connector[HTTP/1.1-8910]]
+
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227) [tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552) [spring-context-5.1.9.RELEASE.jar:5.1.9.RELEASE]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204) [spring-boot-2.1.8.RELEASE.jar:2.1.8.RELEASE]
+	at com.xlcloud.rdgroup.nhjc.XlcloudNhjcApplication.main(XlcloudNhjcApplication.java:31) [classes/:na]
+Caused by: java.net.BindException: Cannot assign requested address: bind
+	at sun.nio.ch.Net.bind0(Native Method) ~[na:1.8.0_201]
+	at sun.nio.ch.Net.bind(Net.java:433) ~[na:1.8.0_201]
+	at sun.nio.ch.Net.bind(Net.java:425) ~[na:1.8.0_201]
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223) ~[na:1.8.0_201]
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74) ~[na:1.8.0_201]
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005) ~[tomcat-embed-core-9.0.24.jar:9.0.24]
+	... 14 common frames omitted
+
+2020-05-12 09:53:14.119  INFO 15804 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-12 09:53:14.154  INFO 15804 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-12 09:53:14.184 ERROR 15804 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8910 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8910, or configure this application to listen on another port.
+
+2020-05-12 09:53:14.185  INFO 15804 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-12 09:53:14.186  INFO 15804 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-0} closing ...
